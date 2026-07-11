@@ -16,7 +16,7 @@ export const goodsFromServer = [
   'Garlic',
 ];
 
-function sortGoods(goods, sortMarker, reverseMarker) {
+function getSortedGoods(goods, sortMarker, reverseMarker) {
   const preparedGoods = [...goods];
 
   if (sortMarker) {
@@ -44,7 +44,7 @@ function sortGoods(goods, sortMarker, reverseMarker) {
 export const App = () => {
   const [sortMarker, setSortMarker] = useState('');
   const [reverseMarker, setReverseMarker] = useState(false);
-  const shownGoods = sortGoods(goodsFromServer, sortMarker, reverseMarker);
+  const shownGoods = getSortedGoods(goodsFromServer, sortMarker, reverseMarker);
 
   return (
     <div className="section content">
